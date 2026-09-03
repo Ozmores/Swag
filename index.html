@@ -3,44 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+
+    <title>About Me ♡</title>
 
     <style>
+        /* Overall page */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
             margin: 0;
-            padding: 50px;
+            padding: 0;
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background: linear-gradient(135deg, #fff0f7, #f5efff);
+            color: #5d4b63;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
+        /* Main About Me box */
         .about-me {
-            max-width: 700px;
-            margin: auto;
-            background-color: white;
-            padding: 35px;
-            border-radius: 15px;
-        }
-
-        h1 {
+            width: 70%;
+            max-width: 750px;
+            margin: 100px auto;
+            padding: 45px;
+            background: rgba(255, 255, 255, 0.85);
+            border: 2px solid #f3c6df;
+            border-radius: 30px;
+            box-shadow: 0 10px 35px rgba(190, 130, 180, 0.2);
             text-align: center;
         }
 
+        /* Heading */
+        h1 {
+            color: #d88bb8;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .heart {
+            color: #e9a6ca;
+        }
+
+        /* Little subtitle */
+        .subtitle {
+            color: #a98ab5;
+            font-size: 16px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        /* Paragraph */
         p {
             font-size: 18px;
-            line-height: 1.7;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        /* Decorative hearts */
+        .decor {
+            font-size: 25px;
+            letter-spacing: 10px;
+            margin: 20px 0;
+        }
+
+        /* Sparkle follower */
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            font-size: 18px;
+            color: #e8a7d1;
+            animation: sparkleFade 1s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes sparkleFade {
+            0% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.3) translateY(25px);
+            }
+        }
+
+        /* Floating background sparkles */
+        .background-sparkle {
+            position: fixed;
+            color: rgba(216, 139, 184, 0.35);
+            font-size: 25px;
+            animation: float 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Mobile friendly */
+        @media (max-width: 600px) {
+            .about-me {
+                width: 80%;
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Background decorations -->
+    <div class="background-sparkle" style="top: 10%; left: 10%;">✧</div>
+    <div class="background-sparkle" style="top: 25%; right: 12%;">✦</div>
+    <div class="background-sparkle" style="bottom: 15%; left: 15%;">⋆</div>
+    <div class="background-sparkle" style="bottom: 25%; right: 20%;">✧</div>
+
+    <!-- About Me -->
     <div class="about-me">
-        <h1>About Me</h1>
+
+        <div class="decor">♡ ✧ ♡ ✧ ♡</div>
+
+        <h1>About Me <span class="heart">♡</span></h1>
+
+        <div class="subtitle">
+            a little bit about me ✧
+        </div>
 
         <p>
-            Hi! My name is Azra, and I am a trying my best!
+            Hi! My name is Azra, and I am a senior Marketing student at
+            Iowa State University. I am passionate about creativity,
+            understanding consumers, and discovering how brands can create
+            meaningful connections with their audiences. Throughout college,
+            I have developed skills in marketing, communication, social
+            media, market research, and consumer behavior. I enjoy learning
+            new things, being creative, and bringing my own personality
+            into the work that I do. As I get closer to graduation, I am
+            excited to take everything I have learned and use it to build
+            a career in marketing while continuing to grow both personally
+            and professionally. ♡
         </p>
+
+        <div class="decor">✧ ˚₊‧ ♡ ‧₊˚ ✧</div>
+
     </div>
+
+    <!-- Sparkle mouse follower -->
+    <script>
+
+        document.addEventListener("mousemove", function(event) {
+
+            const sparkle = document.createElement("div");
+
+            sparkle.classList.add("sparkle");
+
+            const sparkles = ["✦", "✧", "⋆", "♡", "✩"];
+
+            sparkle.innerHTML =
+                sparkles[Math.floor(Math.random() * sparkles.length)];
+
+            sparkle.style.left = event.clientX + "px";
+            sparkle.style.top = event.clientY + "px";
+
+            document.body.appendChild(sparkle);
+
+            setTimeout(function() {
+                sparkle.remove();
+            }, 1000);
+
+        });
+
+    </script>
 
 </body>
 </html>
