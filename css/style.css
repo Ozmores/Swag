@@ -442,3 +442,56 @@ button:hover {
         width: 100%;
     }
 }
+/* =========================================
+   ✨ GLITTERY MOUSE FOLLOWER
+========================================= */
+
+.sparkle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    font-size: 18px;
+
+    color: white;
+
+    text-shadow:
+        0 0 5px #ffb6d9,
+        0 0 10px #ffb6d9,
+        0 0 15px #e8a4ff;
+
+    animation: sparkleFade 1s ease-out forwards;
+}
+
+@keyframes sparkleFade {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.2)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotate(90deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.2)
+            rotate(180deg)
+            translateY(25px);
+    }
+}
