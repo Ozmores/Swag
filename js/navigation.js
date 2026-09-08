@@ -162,3 +162,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+/* =========================================
+   ✨ GLITTERY MOUSE FOLLOWER
+========================================= */
+
+document.addEventListener("mousemove", function(event) {
+
+    const sparkle = document.createElement("span");
+
+    sparkle.classList.add("sparkle");
+
+    const sparkleSymbols = [
+        "✦",
+        "✧",
+        "⋆",
+        "✩",
+        "♡",
+        "₊˚⊹",
+        "✿"
+    ];
+
+    sparkle.innerHTML =
+        sparkleSymbols[
+            Math.floor(
+                Math.random() * sparkleSymbols.length
+            )
+        ];
+
+    sparkle.style.left =
+        event.clientX + "px";
+
+    sparkle.style.top =
+        event.clientY + "px";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(function() {
+
+        sparkle.remove();
+
+    }, 1000);
+
+});
