@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>♡ Azra Beauty ♡</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <style>
+
+        /* =====================================
+           MAKEUP PAGE
+        ===================================== */
+
+        .makeup-page {
+            padding: 30px;
+        }
+
+
+        /* =====================================
+           MAKEUP HERO
+        ===================================== */
+
+        .makeup-hero {
+
+            text-align: center;
+
+            padding: 45px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0f7,
+                    #f8e8fa
+                );
+
+            border:
+                1px solid #efc2da;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .makeup-hero h1 {
+
+            margin: 0;
+
+            font-size: 42px;
+
+            color: #c96f9d;
+
+        }
+
+
+        .makeup-hero p {
+
+            text-align: center;
+
+            font-size: 16px;
+
+            color: #8e6b86;
+
+        }
+
+
+        /* =====================================
+           SEARCH
+        ===================================== */
+
+        .makeup-search {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .makeup-search input {
+
+            width: 70%;
+
+            max-width: 450px;
+
+            padding: 12px 18px;
+
+            border-radius: 25px;
+
+            border:
+                1px solid #e5aac9;
+
+            outline: none;
+
+            font-family: inherit;
+
+        }
+
+
+        .makeup-search input:focus {
+
+            border-color: #cf7fa8;
+
+            box-shadow:
+                0 0 10px
+                rgba(210, 120, 170, .2);
+
+        }
+
+
+        /* =====================================
+           CATEGORY BUTTONS
+        ===================================== */
+
+        .categories {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .category-button {
+
+            background: #fff0f7;
+
+            color: #9c6289;
+
+            border:
+                1px solid #efbfd9;
+
+            border-radius: 20px;
+
+            padding: 9px 18px;
+
+            cursor: pointer;
+
+            transition: .2s;
+
+        }
+
+
+        .category-button:hover {
+
+            background: #e99abd;
+
+            color: white;
+
+        }
+
+
+        .category-button.selected {
+
+            background: #d985ae;
+
+            color: white;
+
+        }
+
+
+        /* =====================================
+           PRODUCTS
+        ===================================== */
+
+        .products {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .product-card {
+
+            background: white;
+
+            border:
+                1px solid #efc4da;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition: .3s;
+
+            box-shadow:
+                0 5px 18px
+                rgba(180, 100, 150, .10);
+
+        }
+
+
+        .product-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(180, 100, 150, .2);
+
+        }
+
+
+        /* Product image */
+
+        .product-image {
+
+            height: 210px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe2ee,
+                    #f4dcf5
+                );
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 75px;
+
+        }
+
+
+        .product-info {
+
+            padding: 20px;
+
+        }
+
+
+        .product-info h3 {
+
+            margin-top: 0;
+
+            color: #b86691;
+
+        }
+
+
+        .product-info p {
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .price {
+
+            font-weight: bold;
+
+            color: #c76f9e;
+
+            font-size: 18px;
+
+        }
+
+
+        /* =====================================
+           PRODUCT BUTTONS
+        ===================================== */
+
+        .product-buttons {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .product-buttons button {
+
+            flex: 1;
+
+            min-width: 120px;
+
+        }
+
+
+        .details-button {
+
+            background: #fff0f7;
+
+            color: #a05d88;
+
+            border:
+                1px solid #e8b5d0;
+
+        }
+
+
+        .details-button:hover {
+
+            background: #f5d5e5;
+
+            color: #8d4f76;
+
+        }
+
+
+        /* =====================================
+           BAG COUNTER
+        ===================================== */
+
+        .bag {
+
+            position: sticky;
+
+            top: 10px;
+
+            z-index: 50;
+
+            text-align: right;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .bag span {
+
+            display: inline-block;
+
+            background: white;
+
+            border:
+                1px solid #efbfd9;
+
+            border-radius: 20px;
+
+            padding: 8px 15px;
+
+            color: #a45d87;
+
+            box-shadow:
+                0 3px 10px
+                rgba(180,100,150,.12);
+
+        }
+
+
+        /* =====================================
+           POPUP
+        ===================================== */
+
+        .popup {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(80, 40, 70, .35);
+
+            z-index: 9998;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+        }
+
+
+        .popup-content {
+
+            background: white;
+
+            width: 90%;
+
+            max-width: 450px;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            border:
+                2px solid #efbdd8;
+
+            box-shadow:
+                0 15px 40px
+                rgba(100,50,90,.25);
+
+        }
+
+
+        .popup-content h2 {
+
+            color: #c96f9d;
+
+        }
+
+
+        .close-popup {
+
+            float: right;
+
+            border: none;
+
+            background: none;
+
+            color: #9b6688;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =====================================
+           CAT
+        ===================================== */
+
+        .cat {
+
+            position: fixed;
+
+            bottom: 10px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            font-size: 55px;
+
+            z-index: 9997;
+
+            pointer-events: none;
+
+            transition:
+                left .15s ease-out;
+
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 700px) {
+
+            .products {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .makeup-page {
+
+                padding: 20px;
+
+            }
+
+            .makeup-hero h1 {
+
+                font-size: 32px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="site-wrapper">
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header class="site-header">
+
+        <div class="logo">
+
+            ♡ AZRA ♡
+
+        </div>
+
+
+        <div class="header-info">
+
+            <p>
+                ✧ welcome to my little beauty corner ✧
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================
+         NAVIGATION
+    ================================== -->
+
+    <nav
+        id="navigation"
+        class="top-navigation">
+    </nav>
+
+
+
+    <!-- =================================
+         PAGE CONTENT
+    ================================== -->
+
+    <main class="main-content makeup-page">
+
+
+        <!-- HERO -->
+
+        <div class="makeup-hero">
+
+            <div class="decor">
+                ✧ ♡ ✧ ♡ ✧
+            </div>
+
+            <h1>
+                AZRA BEAUTY 💄
+            </h1>
+
+            <p>
+                a little collection of pretty things ♡
+            </p>
+
+        </div>
+
+
+
+        <!-- BAG -->
+
+        <div class="bag">
+
+            <span>
+                🛍️ Bag:
+                <strong id="bagCount">0</strong>
+            </span>
+
+        </div>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="makeup-search">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search makeup... ♡"
+                onkeyup="searchProducts()">
+
+        </div>
+
+
+
+        <!-- CATEGORIES -->
+
+        <div class="categories">
+
+            <button
+                class="category-button selected"
+                onclick="filterProducts('all', this)">
+                All
+            </button>
+
+            <button
+                class="category-button"
+                onclick="filterProducts('face', this)">
+                Face
+            </button>
+
+            <button
+                class="category-button"
+                onclick="filterProducts('lips', this)">
+                Lips
+            </button>
+
+            <button
+                class="category-button"
+                onclick="filterProducts('eyes', this)">
+                Eyes
+            </button>
+
+            <button
+                class="category-button"
+                onclick="filterProducts('cheeks', this)">
+                Cheeks
+            </button>
+
+        </div>
+
+
+
+        <!-- PRODUCTS -->
+
+        <div class="products"
+             id="productList">
+
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card"
+                 data-category="face"
+                 data-name="rose glow foundation">
+
+                <div class="product-image">
+                    🌸
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Rose Glow Foundation
+                    </h3>
+
+                    <p>
+                        A lightweight foundation with
+                        a natural, soft-glow finish.
+                    </p>
+
+                    <p class="price">
+                        $28.00
+                    </p>
+
+                    <div class="product-buttons">
+
+                        <button
+                            onclick="addToBag()">
+                            Add to Bag ♡
+                        </button>
+
+                        <button
+                            class="details-button"
+                            onclick="showDetails(
+                                'Rose Glow Foundation',
+                                'A lightweight foundation with a natural glow and buildable coverage.'
+                            )">
+                            Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card"
+                 data-category="lips"
+                 data-name="pink sugar lip gloss">
+
+                <div class="product-image">
+                    💗
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Pink Sugar Lip Gloss
+                    </h3>
+
+                    <p>
+                        A shiny pink gloss for a soft,
+                        juicy-looking lip.
+                    </p>
+
+                    <p class="price">
+                        $16.00
+                    </p>
+
+                    <div class="product-buttons">
+
+                        <button
+                            onclick="addToBag()">
+                            Add to Bag ♡
+                        </button>
+
+                        <button
+                            class="details-button"
+                            onclick="showDetails(
+                                'Pink Sugar Lip Gloss',
+                                'A glossy pink lip color with a comfortable finish.'
+                            )">
+                            Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card"
+                 data-category="cheeks"
+                 data-name="fairy blush">
+
+                <div class="product-image">
+                    🌷
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Fairy Blush
+                    </h3>
+
+                    <p>
+                        A soft pink blush that gives your
+                        cheeks a naturally flushed look.
+                    </p>
+
+                    <p class="price">
+                        $19.00
+                    </p>
+
+                    <div class="product-buttons">
+
+                        <button
+                            onclick="addToBag()">
+                            Add to Bag ♡
+                        </button>
+
+                        <button
+                            class="details-button"
+                            onclick="showDetails(
+                                'Fairy Blush',
+                                'A buildable pink blush designed for a soft romantic flush.'
+                            )">
+                            Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card"
+                 data-category="eyes"
+                 data-name="dreamy eyeshadow palette">
+
+                <div class="product-image">
+                    🦋
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Dreamy Eyeshadow Palette
+                    </h3>
+
+                    <p>
+                        Romantic pink, champagne, and
+                        lavender shades.
+                    </p>
+
+                    <p class="price">
+                        $32.00
+                    </p>
+
+                    <div class="product-buttons">
+
+                        <button
+                            onclick="addToBag()">
+                            Add to Bag ♡
+                        </button>
+
+                        <button
+                            class="details-button"
+                            onclick="showDetails(
+                                'Dreamy Eyeshadow Palette',
+                                'A romantic palette featuring pink, champagne, and lavender shades.'
+                            )">
+                            Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer class="site-footer">
+
+        © 2026 Azra's Beauty ♡
+
+        <br>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="makeup.html">
+            Makeup
+        </a>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =================================
+     PRODUCT POPUP
+================================== -->
+
+<div class="popup"
+     id="productPopup">
+
+    <div class="popup-content">
+
+        <button
+            class="close-popup"
+            onclick="closePopup()">
+            ×
+        </button>
+
+        <div class="decor">
+            ✧ ♡ ✧
+        </div>
+
+        <h2 id="popupTitle">
+            Product
+        </h2>
+
+        <p id="popupDescription">
+            Description
+        </p>
+
+        <button onclick="addToBag(); closePopup();">
+            Add to Bag ♡
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================
+     BLACK CAT
+================================== -->
+
+<div class="cat"
+     id="cat">
+    🐈‍⬛
+</div>
+
+
+
+<!-- =================================
+     JAVASCRIPT
+================================== -->
+
+<script src="js/navigation.js"></script>
+
+
+<script>
+
+
+/* =====================================
+   SHOPPING BAG
+===================================== */
+
+let bagCount = 0;
+
+
+function addToBag() {
+
+    bagCount++;
+
+    document.getElementById(
+        "bagCount"
+    ).innerText = bagCount;
+
+}
+
+
+
+/* =====================================
+   PRODUCT DETAILS
+===================================== */
+
+function showDetails(
+    title,
+    description
+) {
+
+    document.getElementById(
+        "popupTitle"
+    ).innerText = title;
+
+
+    document.getElementById(
+        "popupDescription"
+    ).innerText = description;
+
+
+    document.getElementById(
+        "productPopup"
+    ).style.display = "flex";
+
+}
+
+
+function closePopup() {
+
+    document.getElementById(
+        "productPopup"
+    ).style.display = "none";
+
+}
+
+
+
+/* =====================================
+   CATEGORY FILTER
+===================================== */
+
+function filterProducts(
+    category,
+    button
+) {
+
+    const products =
+        document.querySelectorAll(
+            ".product-card"
+        );
+
+
+    const buttons =
+        document.querySelectorAll(
+            ".category-button"
+        );
+
+
+    buttons.forEach(function(btn) {
+
+        btn.classList.remove(
+            "selected"
+        );
+
+    });
+
+
+    button.classList.add(
+        "selected"
+    );
+
+
+    products.forEach(function(product) {
+
+        if (
+            category === "all" ||
+            product.dataset.category === category
+        ) {
+
+            product.style.display = "block";
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+
+/* =====================================
+   SEARCH
+===================================== */
+
+function searchProducts() {
+
+    const search =
+        document.getElementById(
+            "searchBox"
+        ).value.toLowerCase();
+
+
+    const products =
+        document.querySelectorAll(
+            ".product-card"
+        );
+
+
+    products.forEach(function(product) {
+
+        const name =
+            product.dataset.name;
+
+
+        if (
+            name.includes(search)
+        ) {
+
+            product.style.display =
+                "block";
+
+        } else {
+
+            product.style.display =
+                "none";
+
+        }
+
+    });
+
+}
+
+
+
+/* =====================================
+   🐈‍⬛ CAT FOLLOWS MOUSE
+===================================== */
+
+document.addEventListener(
+    "mousemove",
+    function(event) {
+
+        const cat =
+            document.getElementById("cat");
+
+
+        cat.style.left =
+            event.clientX + "px";
+
+    }
+);
+
+
+
+/* =====================================
+   ✨ SPARKLE MOUSE TRAIL
+===================================== */
+
+document.addEventListener(
+    "mousemove",
+    function(event) {
+
+        const sparkle =
+            document.createElement("span");
+
+
+        sparkle.classList.add(
+            "sparkle"
+        );
+
+
+        const symbols = [
+            "✦",
+            "✧",
+            "⋆",
+            "✩",
+            "♡"
+        ];
+
+
+        sparkle.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random()
+                    * symbols.length
+                )
+            ];
+
+
+        sparkle.style.left =
+            event.clientX + "px";
+
+
+        sparkle.style.top =
+            event.clientY + "px";
+
+
+        document.body.appendChild(
+            sparkle
+        );
+
+
+        setTimeout(
+            function() {
+
+                sparkle.remove();
+
+            },
+
+            900
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
